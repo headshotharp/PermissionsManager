@@ -1,0 +1,50 @@
+name: Permissions_Manager
+main: org.border.permission.Main
+version: 1.2
+author: TheBorder
+commands:
+  pm:
+    description: Controls Permissions Manager.
+    usage: |
+           Usage: /<command> reload
+           Usage: /<command> debug
+           Usage: /<command> promote [player]
+           Usage: /<command> demote [player]
+           Usage: /<command> setgroup [player] [group]
+  chat:
+    description: Option to set-up channel-channels.
+    usage: |
+           Usage: /<command> send/receive
+           Usage: /<command> send/receive toggle [Chat-Channel]
+  message:
+    description: Sends a message to a specific channel.
+    usage: |
+           Usage: /<command> [channel-id] [message]
+permissions:
+  pm.reload:
+    default: op
+  pm.update:
+    default: false
+  pm.debug:
+    default: false
+  pm.demote.own:
+    default: false
+  pm.demote.all:
+    default: false
+  pm.promote.own:
+    default: false
+  pm.promote.all:
+    default: false
+  pm.setgroup:
+    children:
+      pm.promote.all: true
+      pm.demote.all: true
+    default: false
+  pm.chat.send.view:
+    default: false
+  pm.chat.receive.view:
+    default: false
+  pm.chat.send.toggle:
+    default: false
+  pm.chat.receive.toggle:
+    default: false
