@@ -7,12 +7,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.permissions.PermissionAttachment;
 
-final class JoinListener implements Listener {
-	Main plugin;
+public class JoinListener implements Listener {
+	private Main plugin;
 
-	JoinListener(Main p) {
+	protected JoinListener(Main p) {
 		this.plugin = p;
 	}
 
@@ -38,14 +37,14 @@ final class JoinListener implements Listener {
 	@EventHandler
 	private void onQuit(PlayerQuitEvent event) {
 		Player p = event.getPlayer();
-		((PermissionAttachment) Main.permissions.get(p)).remove();
+		Main.permissions.get(p).remove();
 		Main.permissions.remove(p);
 		Main.prefixes.remove(p);
 		Main.suffixes.remove(p);
-		Main.message_format.remove(p);
-		Main.chat_receive_all.remove(p);
-		Main.chat_send_all.remove(p);
-		Main.chat_receive_enabled.remove(p);
-		Main.chat_send_enabled.remove(p);
+		Main.messageFormat.remove(p);
+		Main.chatReceiveAll.remove(p);
+		Main.chatSendAll.remove(p);
+		Main.chatReceiveEnabled.remove(p);
+		Main.chatSendEnabled.remove(p);
 	}
 }
