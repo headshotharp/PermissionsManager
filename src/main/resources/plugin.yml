@@ -1,7 +1,7 @@
 name: Permissions_Manager
 main: org.border.permission.Main
-version: 1.14.4-1.0
-api-version: 1.14
+version: 1.19.2-1.0
+api-version: 1.19
 author: TheBorder
 commands:
   pm:
