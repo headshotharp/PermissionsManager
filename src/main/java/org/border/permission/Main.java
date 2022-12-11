@@ -42,8 +42,8 @@ public final class Main extends JavaPlugin {
     static Map<String, Map<Integer, String>> rankMapGroup = new HashMap<>();
     static Map<String, List<Integer>> rankMapRank = new HashMap<>();
     static Map<Player, PermissionAttachment> permissions = new HashMap<>();
-    static Map<Player, ArrayList<String>> prefixes = new HashMap<>();
-    static Map<Player, ArrayList<String>> suffixes = new HashMap<>();
+    static Map<Player, List<String>> prefixes = new HashMap<>();
+    static Map<Player, List<String>> suffixes = new HashMap<>();
     static Map<Player, String> messageFormat = new HashMap<>();
     static Map<Player, Set<String>> chatSendAll = new HashMap<>();
     static Map<Player, Set<String>> chatReceiveAll = new HashMap<>();
